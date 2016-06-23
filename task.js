@@ -7,7 +7,7 @@ var todoList = {
       for (var i = 0; i < this.todos.length; i++) {
         console.log(this.todos[i].todoText);
 
-        if (this.todo[i].completed === true) {
+        if (this.todos[i].completed === true) {
           console.log('(x)', this.todos[i].todoText);
         } else {
           console.log('( )', this.todos[i].todoText);
@@ -29,7 +29,7 @@ var todoList = {
   deleteTodo: function(position) {
     this.todos.splice(position, 1);
     this.displayTodos();
-  }
+  },
   toggleCompleted: function(position) {
     var todo = todos[position]
     todo.completed = !todo.completed;
@@ -60,3 +60,14 @@ var todoList = {
     this.displayTodos();
   }
 };
+
+var displayTodosButton = document.getElementById('displayTodosButton');
+var toggleAllButton = document.getElementById('toggleAllButton');
+
+displayTodosButton.addEventListener('click', function() {
+  todoList.displayTodos();
+});
+
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
