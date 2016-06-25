@@ -31,7 +31,7 @@ var todoList = {
     this.displayTodos();
   },
   toggleCompleted: function(position) {
-    var todo = todos[position]
+    var todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
   },
@@ -61,13 +61,27 @@ var todoList = {
   }
 };
 
-var displayTodosButton = document.getElementById('displayTodosButton');
-var toggleAllButton = document.getElementById('toggleAllButton');
+// code 65 - 75 is exactly the same as 76 - 83!!
+// 65 - 75 is not organised and is not DRY
+//
+// var displayTodosButton = document.getElementById('displayTodosButton');
+// var toggleAllButton = document.getElementById('toggleAllButton');
 
-displayTodosButton.addEventListener('click', function() {
+// displayTodosButton.addEventListener('click', function() {
+//   todoList.displayTodos();
+// });
+
+// toggleAllButton.addEventListener('click', function() {
+//   todoList.toggleAll();
+// });
+
+// below is a much better way to write code
+
+var handlers = {
+  displayTodos: function() {
   todoList.displayTodos();
-});
-
-toggleAllButton.addEventListener('click', function() {
+  },
+  toggleAll: function() {
   todoList.toggleAll();
-});
+  }
+};

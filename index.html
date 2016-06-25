@@ -6,9 +6,14 @@
 </head>
 <body>
   <h1>Todoist</h1>
+<!-- the ids just give yo the id of the object that something should be done to in JS -->
+    <!-- <button id="displayTodosButton">Display Todos</button> -->
+    <!-- <button id="toggleAllButton">Toggle All</button> -->
+<!-- onclick. atribute gives you a hint on whats going to happen, it is more descriptive to use handlers -->
 
-    <button id="displayTodosButton">Display Todos</button>
-    <button id="toggleAllButton">Toggle All</button>
+    <button onclick="handlers.displayTodos()">Display Todos</button>
+    <button onclick="handlers.toggleAll()">Toggle All</button>
+
 
   <script src="task.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
